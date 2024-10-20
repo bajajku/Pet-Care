@@ -28,19 +28,11 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 
-  provider: ^6.0.0 # For state management
-  http: ^0.13.4 # For making HTTP requests
-  shared_preferences: ^2.0.13 # For storing user sessions
-  google_maps_flutter: ^2.2.2 # For location-based recommendations
-  flutter_local_notifications: ^9.0.0 # For reminders and notifications
-  firebase_auth: ^4.2.1 # For user authentication
-  firebase_core: ^2.13.1 # Firebase initialization
-  # Add any additional packages you need for your specific use case
 
 dependencies:
   flutter:
     sdk: flutter
-  provider: ^6.0.0 # For state management
+  provider: ^6.1.2 # For state management
   http: ^0.13.4 # For making HTTP requests
   shared_preferences: ^2.0.13 # For storing user sessions
   google_maps_flutter: ^2.2.2 # For location-based recommendations
