@@ -1,4 +1,4 @@
-# pet_care
+# Pet Care Application
 
 A new Flutter project.
 
