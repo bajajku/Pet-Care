@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pet_care/widgets/bottom_nav_bar.dart';
+import 'package:pet_care/widgets/pet_care_home_page.dart';
+import 'package:pet_care/widgets/top_app_bar.dart';
 import 'package:provider/provider.dart';
-import 'Screens/add_pet_screen.dart';
-import 'Screens/home_screen.dart';
 import 'providers/pet_provider.dart';
 
 void main() {
@@ -16,16 +16,25 @@ class PetCareApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => PetProvider()), // PetProvider here
+        ChangeNotifierProvider(create: (_) => PetProvider()),
       ],
       child: MaterialApp(
-        title: 'Pet Care App',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: BottomNavigationBarExample()
+        home: const PetCareHomePage(),
       ),
     );
   }
 }
 
+class PetCareHomePage extends StatelessWidget {
+  const PetCareHomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: BottomNavigationBarExample(),
+    );
+  }
+}

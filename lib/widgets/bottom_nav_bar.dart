@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pet_care/Screens/add_pet_screen.dart';
 import 'package:pet_care/Screens/home_screen.dart';
+import 'package:pet_care/widgets/top_app_bar.dart';
 
 void main() => runApp(const PetCareApp());
 
@@ -11,6 +13,18 @@ class PetCareApp extends StatelessWidget {
     return const MaterialApp(
       home: BottomNavigationBarExample(),
     );
+  }
+}
+PreferredSizeWidget? _getAppBarForSelectedIndex(int index) {
+  switch (index) {
+    case 0:
+      return PetAppBar();
+    case 1:
+      return AppBar(title: const Text('Schedule'));
+    case 2:
+      return AppBar(title: const Text('Profile'));
+    default:
+      return null; // No AppBar for this screen
   }
 }
 
@@ -31,10 +45,7 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
 
   static final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),        // Home/Dashboard screen
-    Text(
-      'Pets Profile: View and Update Pet Profiles',
-      style: optionStyle,
-    ),
+    AddPetScreen(),
     Text(
       'Schedule: Manage Care Schedule',
       style: optionStyle,
@@ -58,9 +69,7 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Pet Care App'),
-      ),
+      appBar: _getAppBarForSelectedIndex(_selectedIndex),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
