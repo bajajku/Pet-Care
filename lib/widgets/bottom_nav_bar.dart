@@ -20,9 +20,13 @@ PreferredSizeWidget? _getAppBarForSelectedIndex(int index) {
     case 0:
       return PetAppBar();
     case 1:
-      return AppBar(title: const Text('Schedule'));
+      return AppBar(title: const Text('PetProfile '));
     case 2:
-      return AppBar(title: const Text('Profile'));
+      return AppBar(title: const Text('Schedule'));
+    case 3:
+      return AppBar(title: const Text('Pet friendly places'));
+    case 4:
+      return AppBar(title: const Text('Cart'));
     default:
       return null; // No AppBar for this screen
   }
